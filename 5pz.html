@@ -1,0 +1,48 @@
+<head>
+    <meta charset="UTF-8">
+</head>
+<body> 
+    <form > <!-- для обмена данными между пользователем и сервером -->
+        <!-- input для создания различных кнопок, type - сообщает браузеру, к какому типу относится элемент формы
+        radio - переключатель, checked-позволяет установить флажок в отмеченное состояние 
+        value-значение элемента, id-идентификация элемента при связывании
+    (id,for) label-устанавливает связь между определенной меткой чтобы изменять значения элементов формы при нажатии курсором мыши на текст
+    -->
+        <input type="radio" checked name="stat" id="stat_akt" value="true"/><label for="stat_akt" >Актив</label><br><!-- -деление на строки -->
+        <input type="radio" name="stat" id="stat_passive" value="false"/><label for="stat_passive">Пассив</label>
+    </form>
+    <form>
+        <input type="text" name="nazv" id="nazv" size="40" placeholder="название">
+        <!-- текстовое поле -->
+        <input type="text" name="cost" id="cost" size="40" placeholder="стоимость">
+        <button type="button" name="button"class="button" onclick="Addrow()">Добавить</button>
+        <!-- Обработчики событий -->
+
+    </form>
+    <form>
+        <button type="button" name="button" onclick="suumactive()">Расчитать сумму активов</button>
+        <button type="button"  name="button" onclick="suumpassive()" >Расчитать сумму пассивов</button>
+        <button type="button"  name="button" onclick="suumall()" >Расчитать итоговую сумму</button>
+        <button type="button"  name="button" onclick="clean()" >Очистка страницы</button>
+    </form>
+    <div>
+        <table border id="activ">
+            <tr>
+                <td>Название актива</td>
+                <td>Стоимость</td>
+            </tr>
+        </table>
+
+        <table border id="passive">
+            <tr>
+                <td>Название пассива</td>
+                <td>Стоимость</td>
+            </tr>
+        </table>
+    </div>
+    <p id="sumactiv">Сумма активов = </p>
+    <p id="sumpass">Сумма пасивов = </p>
+    <p id="sumall">Итоговая сумма = </p>
+
+    <script src="cotik.js"></script>
+</body>
